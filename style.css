@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,400&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+
+}
+
+html{
+    font-size: 10px;
+    font-family: "Roboto", 'Times New Roman', Times, serif;
+    scroll-behavior: smooth;    
+}
+
+a{
+    text-decoration: none;
+}
+
+/*Background*/ 
+#background{
+    background-image: url(./corn-g96d0584a8_1920.jpg);
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    background-size:cover;
+    background-position:center;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    background-color: black;
+    opacity: 0.75;
+    width: 100%; 
+    height: 50%;
+    display: flex;
+    align-content: center;
+    justify-content:space-evenly;
+}
+
+
+header nav ul{
+    display: flex;
+    width: fit-content;
+}
+    
+header nav ul li {
+    list-style: none;
+    width: fit-content;
+    position: relative;
+    
+}
+  
+header nav ul li a {
+    text-decoration: none;
+    color: goldenrod;
+    text-transform: uppercase;
+    font-size: 25rem;
+    padding-left: 10rem;
+    padding-right: 10rem;    
+}
+
+li a:hover{
+    color: black ;
+    background-color: darkgoldenrod;
+    font-weight: 500;
+    transition: .4s ease;
+    transition-property: background-color, color;
+       
+}
+
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*SECAO DA APRESENTACAO*/
+#presentation h1{
+    display: block;
+    width: fit-content;
+    font-size: 30rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+#presentation h1:nth-child(1){
+    animation-delay: .8s;
+}
+#presentation h1:nth-child(2){
+    animation-delay: 1.8s;
+}
+#presentation h1:nth-child(3){
+    animation: text_reveal_name .5s ease forwards;
+    animation-delay: 2.8s;
+}
+
+#presentation .cta{
+    display: inline-block;
+    padding:30px 50px;
+    color: goldenrod;
+    background-color: transparent;
+    font-size: 15rem;
+    border: 2px solid gold;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    margin-top: 20px;
+    transition: .4s ease;
+    transition-property: background-color, color;       
+}
+
+#presentation .cta:hover{
+    color:white;
+    background-color: gold;
+    font-weight: 500;
+}
+
+#presentation h1 span {
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 0%;
+    animation: text_reveal_box 1s ease;
+    animation-duration: .5s;
+    background-color: gold;    
+}
+
+#presentation h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+#presentation h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+#presentation h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+
+#presentation::after {
+    content:'';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/*KEY FRAMESS*/
+@keyframes text_reveal_name{
+    100%{
+        color: gold;
+        font-weight: 500px;
+    }
+}
+@keyframes text_reveal{
+    100%{
+        color: white;        
+    }
+}
+@keyframes text_reveal_box{
+    50%{
+        width: 100%;
+        left:0;
+    }
+    100%{
+        width: 0%;
+        left: 100;
+    }
+}
